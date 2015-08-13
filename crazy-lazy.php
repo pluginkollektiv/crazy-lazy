@@ -1,12 +1,13 @@
 <?php
 /*
 Plugin Name: Crazy Lazy
-Description: Lazy Load WordPress Plugin
-Author: Sergej M&uuml;ller
-Author URI: http://wpcoder.de
-Plugin URI: https://wordpress.org/plugins/crazy-lazy/
-License: GPLv2 or later
-Version: 0.0.9.1
+Description: Lazy load images. Simple to use: Activate, done. Search engine and noscript user friendly.
+Author:      pluginkollektiv
+Author URI:  http://pluginkollektiv.org
+Plugin URI:  https://wordpress.org/plugins/crazy-lazy/
+License:     GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version:     0.0.9.1
 */
 
 /*
