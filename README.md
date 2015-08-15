@@ -19,6 +19,7 @@ By loading images only when needed, *Crazy Lazy* will reducing page loading time
 
 This Lazy Load plugin is structured very lean and does not require any settings: activate, done. Depending on the theme or the usage of jQuery *Crazy Lazy* optionally will utilze a modified version of the jQuery plugin [Unveil.js](https://github.com/luis-almeida/unveil), or the native JavaScript library [lazyload.js](https://gist.github.com/miloplacencia/3931803).
 
+
 ### Deutsch ###
 *Crazy Lazy* übernimmt die effiziente Anzeige der Artikelbilder im WordPress-Blog. Um die Performance der Blogseiten zu steigern, werden nicht alle Bilder sofort vom Server angefordert, sondern nach Bedarf: Erst beim Erreichen der Scroll-Position lädt *Crazy Lazy* das entsprechende Bild nach.
 
@@ -26,8 +27,8 @@ Durch die Nachlade-Technik lassen sich Ladezeiten verkürzen und der Traffic red
 
 Das Lazy Load Plugin ist simpel aufgebaut und benötigt keinerlei Einstellungen: Aktivieren, läuft. Je nach Theme bzw. die jQuery-Nutzung verwendet *Crazy Lazy* wahlweise das modifizierte jQuery Plugin [Unveil.js](https://github.com/luis-almeida/unveil) oder die JavaScript-native Bibliothek [lazyload.js](https://gist.github.com/miloplacencia/3931803).
 
-### Styling ###
 
+### Styling ###
 Placeholders for images can be styled, i.e. like this:
 
 `img[src*='data:image/gif;base64'] {
@@ -59,7 +60,6 @@ Placeholders for images can be styled, i.e. like this:
 
 
 ## Frequently Asked Questions ##
-
 ### Will this plugin lazy load all the images on a page? ###
 All images that have been uploaded into your media library, including featured images.
 
@@ -74,7 +74,6 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
-
 ### 0.0.9.1 ###
 * Removed support for WordPress’ native galleries after some users had reported issues
 
