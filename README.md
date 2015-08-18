@@ -74,6 +74,10 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 0.0.9.2 ###
+* translated README
+* updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
+
 ### 0.0.9.1 ###
 * Removed support for WordPress’ native galleries after some users had reported issues
 
