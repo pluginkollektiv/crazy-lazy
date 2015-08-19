@@ -88,8 +88,8 @@ final class CrazyLazy {
                 '#(<img(.+?)src=["\'](.+?)["\'](.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.*?)(/?)>)#'
             ),
             array(
-                '<img ${1} class="crazy_lazy ${3}" src="' .$null. '" ${4} data-src="${5}" ${6} style="display:none" ${7}><noscript>${2}</noscript>',
-                '<img ${1} src="' .$null. '" data-src="${3}" ${4} class="crazy_lazy ${5}" ${6} style="display:none" ${7}><noscript>${2}</noscript>'
+                '<img ${2} class="crazy_lazy ${3}" src="' .$null. '" ${4} data-src="${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>',
+                '<img ${2} src="' .$null. '" data-src="${3}" ${4} class="crazy_lazy ${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>'
             ),
             $content
         );
