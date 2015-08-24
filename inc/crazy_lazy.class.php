@@ -84,12 +84,12 @@ final class CrazyLazy {
         /* Replace images */
         return preg_replace(
             array(
-                '#(<img class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.+?)src=["\'](.+?)["\'](.*?)(/?)>)#',
-                '#(<img src=["\'](.+?)["\'](.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.*?)(/?)>)#'
+                '#(<img(.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.+?)src=["\'](.+?)["\'](.*?)(/?)>)#',
+                '#(<img(.+?)src=["\'](.+?)["\'](.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.*?)(/?)>)#'
             ),
             array(
-                '<img class="crazy_lazy ${2}" src="' .$null. '" ${3} data-src="${4}" ${5} style="display:none" ${6}><noscript>${1}</noscript>',
-                '<img src="' .$null. '" data-src="${2}" ${3} class="crazy_lazy ${4}" ${5} style="display:none" ${6}><noscript>${1}</noscript>'
+                '<img ${2} class="crazy_lazy ${3}" src="' .$null. '" ${4} data-src="${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>',
+                '<img ${2} src="' .$null. '" data-src="${3}" ${4} class="crazy_lazy ${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>'
             ),
             $content
         );
