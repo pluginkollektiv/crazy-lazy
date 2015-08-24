@@ -74,6 +74,9 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 0.1.0 ###
+* fixed a bug in the regex
+
 ### 0.0.9.2 ###
 * translated README
 * updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
