@@ -41,10 +41,6 @@ Placeholders for images can be styled, i.e. like this:
 }`
 
 
-### Video ###
-[youtube http://www.youtube.com/watch?v=tMv5tl3Q4Aw]
-
-
 ### Memory Usage ###
 * Back-end: ~ 0,01 MB
 * Front-end: ~ 0,04 MB
@@ -66,8 +62,6 @@ All images that have been uploaded into your media library, including featured i
 ### Will I have to edit any theme template files to make this work? ###
 Usually no. If Crazy Lazy doesn’t work out of the box, check your active theme’s `footer.php` template file. There should be a line calling `wp_footer()` in it which is required for Crazy Lazy to work properly.
 
-### What’s with the “modified” version of Unveil.js? ###
-That’s a fork of Unveil.js: [Unveil.js for WordPress](https://github.com/sergejmueller/unveil-wordpress-plugin) by.
 
 ### Will Crazy Lazy work well with any caching plugins? ###
 Crazy Lazy will work with every caching plugin, including our own [Cachify](https://wordpress.org/plugins/cachify/).
