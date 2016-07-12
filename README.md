@@ -1,7 +1,7 @@
 # Crazy Lazy #
 * Contributors:      pluginkollektiv
 * Tags:              lazy, load, loading, performance, images
-* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LG5VC9KXMAYXJ
+* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.6
 * Tested up to:      4.3
 * Stable tag:        trunk
