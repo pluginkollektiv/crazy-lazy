@@ -40,6 +40,9 @@ Placeholders for images can be styled, i.e. like this:
     background-size: 16px 16px;
 }`
 
+### Excluding images ###
+
+It's possible to exclude some images from the lazy loading. This can be achieved by adding an attribute `data-crazy-lazy="exclude"` to the images that should not lazy loaded by the plugin. 
 
 ### Memory Usage ###
 * Back-end: ~ 0,01 MB

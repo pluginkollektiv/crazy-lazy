@@ -80,22 +80,50 @@ final class CrazyLazy {
 			return $content;
 		}
 
-		/* Empty gif */
-		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-
 		/* Replace images */
-
-		return preg_replace(
-			array(
-				'#(<img(.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.+?)src=["\'](.+?)["\'](.*?)(/?)>)#',
-				'#(<img(.+?)src=["\'](.+?)["\'](.+?)class=["\'](.*?(?:wp-image-|wp-post-image).+?)["\'](.*?)(/?)>)#',
-			),
-			array(
-				'<img ${2} class="crazy_lazy ${3}" src="' . $null . '" ${4} data-src="${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>',
-				'<img ${2} src="' . $null . '" data-src="${3}" ${4} class="crazy_lazy ${5}" ${6} style="display:none" ${7}><noscript>${1}</noscript>',
-			),
+		return preg_replace_callback(
+			'/(?P<all>                                                              (?# match the whole img tag )
+				<img(?P<before>[^>]*)                                               (?# the opening of the img and some optional attributes )
+				(                                                                   (?# match a class attribute followed by some optional ones and the src attribute )
+					class=["\'](?P<class1>.*?(?:wp-image-|wp-post-image).+?)["\']
+					(?P<between1>[^>]*)
+					src=["\'](?P<src1>[^>"\']*)["\']
+					|                                                               (?# match same as before, but with the src attribute before the class attribute )
+					src=["\'](?P<src2>[^>"\']*)["\']
+					(?P<between2>[^>]*)
+					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image).+?)["\']
+				)
+				(?P<after>[^>]*)                                                    (?# match any additional optional attributes )
+				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
+			)/x',
+			array( 'CrazyLazy', 'replace_images' ),
 			$content
 		);
+	}
+
+	/**
+	 * The callback function for the preg_match_callback to modify the img tags.
+	 *
+	 * @param array $matches The regex matches.
+	 *
+	 * @return string The modified content string.
+	 */
+	public static function replace_images( $matches ) {
+		/* Empty gif */
+		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+		// Return unmodified image if the "data skip" attribute was found.
+		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) ) {
+			return $matches['all'];
+		} else {
+			return '<img ' . $matches['before']
+			       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2']
+			       . ' "src="' . $null . '"'
+			       . $matches['between1'] . $matches['between2']
+			       . ' data-src="' . $matches['src1'] . $matches['src2'] . '"'
+			       . $matches['after']
+			       . ' style="display:none"'
+			       . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
+		}
 	}
 
 
