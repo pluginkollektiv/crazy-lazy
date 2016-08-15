@@ -68,7 +68,7 @@ final class CrazyLazy {
 	 * Prepare content images for Crazy Lazy usage
 	 *
 	 * @since   0.0.1
-	 * @change  0.0.9.1
+	 * @change  1.0.0
 	 *
 	 * @param   string $content The original post content.
 	 *
@@ -103,6 +103,8 @@ final class CrazyLazy {
 
 	/**
 	 * The callback function for the preg_match_callback to modify the img tags.
+	 *
+	 * @since   1.0.0
 	 *
 	 * @param array $matches The regex matches.
 	 *

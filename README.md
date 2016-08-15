@@ -3,8 +3,8 @@
 * Tags:              lazy, load, loading, performance, images
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.6
-* Tested up to:      4.3
-* Stable tag:        trunk
+* Tested up to:      4.6
+* Stable tag:        1.0.0
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,15 +19,6 @@ By loading images only when needed, *Crazy Lazy* will reducing page loading time
 
 This Lazy Load plugin is structured very lean and does not require any settings: activate, done. Depending on the theme or the usage of jQuery *Crazy Lazy* optionally will utilze a modified version of the jQuery plugin [Unveil.js](https://github.com/luis-almeida/unveil), or the native JavaScript library [lazyload.js](https://gist.github.com/miloplacencia/3931803).
 
-
-### Deutsch ###
-*Crazy Lazy* übernimmt die effiziente Anzeige der Artikelbilder im WordPress-Blog. Um die Performance der Blogseiten zu steigern, werden nicht alle Bilder sofort vom Server angefordert, sondern nach Bedarf: Erst beim Erreichen der Scroll-Position lädt *Crazy Lazy* das entsprechende Bild nach.
-
-Durch die Nachlade-Technik lassen sich Ladezeiten verkürzen und der Traffic reduzieren.
-
-Das Lazy Load Plugin ist simpel aufgebaut und benötigt keinerlei Einstellungen: Aktivieren, läuft. Je nach Theme bzw. die jQuery-Nutzung verwendet *Crazy Lazy* wahlweise das modifizierte jQuery Plugin [Unveil.js](https://github.com/luis-almeida/unveil) oder die JavaScript-native Bibliothek [lazyload.js](https://gist.github.com/miloplacencia/3931803).
-
-
 ### Styling ###
 Placeholders for images can be styled, i.e. like this:
 
@@ -41,7 +32,6 @@ Placeholders for images can be styled, i.e. like this:
 }`
 
 ### Excluding images ###
-
 It's possible to exclude some images from the lazy loading. This can be achieved by adding an attribute `data-crazy-lazy="exclude"` to the images that should not lazy loaded by the plugin. 
 
 ### Memory Usage ###
@@ -71,6 +61,10 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 1.0.0 ###
+* new regex to match images and preventing duplicate replacements
++ added an option to exclude images from lazy loading by using a special attribute
+
 ### 0.1.0 ###
 * fixed a bug in the regex
 
