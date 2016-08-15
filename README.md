@@ -63,7 +63,7 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 ## Changelog ##
 ### 1.0.0 ###
 * new regex to match images and preventing duplicate replacements
-+ added an option to exclude images from lazy loading by using a special attribute
+* added an option to exclude images from lazy loading by using a special attribute
 
 ### 0.1.0 ###
 * fixed a bug in the regex
