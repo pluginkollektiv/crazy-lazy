@@ -80,9 +80,6 @@ final class CrazyLazy {
 			return $content;
 		}
 
-		/* Empty gif */
-		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-
 		/* Replace images */
 		return preg_replace_callback(
 			'/(?P<all>                                                              (?# match the whole img tag )
@@ -99,23 +96,34 @@ final class CrazyLazy {
 				(?P<after>[^>]*)                                                    (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
 			)/x',
-			function( $matches ) use ( $null ) {
-				// Return unmodified image if the "data skip" attribute was found.
-				if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) ) {
-					return $matches['all'];
-				} else {
-					return '<img ' . $matches['before']
-					       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2']
-					       . ' "src="' . $null . '"'
-					       . $matches['between1'] . $matches['between2']
-					       . ' data-src="' . $matches['src1'] . $matches['src2'] . '"'
-					       . $matches['after']
-					       . ' style="display:none"'
-					       . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
-				}
-			},
+			array( 'CrazyLazy', 'replace_images' ),
 			$content
 		);
+	}
+
+	/**
+	 * The callback function for the preg_match_callback to modify the img tags.
+	 *
+	 * @param array $matches The regex matches.
+	 *
+	 * @return string The modified content string.
+	 */
+	public static function replace_images( $matches ) {
+		/* Empty gif */
+		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+		// Return unmodified image if the "data skip" attribute was found.
+		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) ) {
+			return $matches['all'];
+		} else {
+			return '<img ' . $matches['before']
+			       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2']
+			       . ' "src="' . $null . '"'
+			       . $matches['between1'] . $matches['between2']
+			       . ' data-src="' . $matches['src1'] . $matches['src2'] . '"'
+			       . $matches['after']
+			       . ' style="display:none"'
+			       . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
+		}
 	}
 
 
