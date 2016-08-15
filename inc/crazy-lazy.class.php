@@ -101,7 +101,7 @@ final class CrazyLazy {
 			)/x',
 			function( $matches ) use ( $null ) {
 				// Return unmodified image if the "data skip" attribute was found.
-				if ( false !== strpos( $matches['all'], 'data-crazy-lazy="skip"' ) ) {
+				if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) ) {
 					return $matches['all'];
 				} else {
 					return '<img ' . $matches['before']
