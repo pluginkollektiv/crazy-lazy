@@ -93,7 +93,7 @@ final class CrazyLazy {
 					(?P<between2>[^>]*)
 					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image).+?)["\']
 				)
-				(?P<after>[^>]*)                                                    (?# match any additional optional attributes )
+				(?P<after>[^>/]*)                                                   (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
 			)/x',
 			array( 'CrazyLazy', 'replace_images' ),
@@ -118,8 +118,8 @@ final class CrazyLazy {
 			return $matches['all'];
 		} else {
 			return '<img ' . $matches['before']
-			       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2']
-			       . ' "src="' . $null . '"'
+			       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '"'
+			       . ' src="' . $null . '"'
 			       . $matches['between1'] . $matches['between2']
 			       . ' data-src="' . $matches['src1'] . $matches['src2'] . '"'
 			       . $matches['after']
