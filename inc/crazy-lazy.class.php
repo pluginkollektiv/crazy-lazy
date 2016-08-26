@@ -113,8 +113,8 @@ final class CrazyLazy {
 	public static function replace_images( $matches ) {
 		/* Empty gif */
 		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-		// Return unmodified image if the "data skip" attribute was found.
-		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) ) {
+		// Return unmodified image if the "data skip" attribute was found or tht image has already been processed.
+		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) || false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' ) ) {
 			return $matches['all'];
 		} else {
 			return '<img ' . $matches['before']
