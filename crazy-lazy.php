@@ -14,7 +14,7 @@
  * Plugin URI:  https://wordpress.org/plugins/crazy-lazy/
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version:     1.0.0
+ * Version:     1.0.1
  */
 
 /*

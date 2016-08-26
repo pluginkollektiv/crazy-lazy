@@ -4,7 +4,7 @@
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.6
 * Tested up to:      4.6
-* Stable tag:        1.0.0
+* Stable tag:        1.0.1
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 1.0.1 ###
+* fixed a formatting error in the regular expression replacement
+
 ### 1.0.0 ###
 * new regex to match images and preventing duplicate replacements
 * added an option to exclude images from lazy loading by using a special attribute
