@@ -85,13 +85,13 @@ final class CrazyLazy {
 			'/(?P<all>                                                              (?# match the whole img tag )
 				<img(?P<before>[^>]*)                                               (?# the opening of the img and some optional attributes )
 				(                                                                   (?# match a class attribute followed by some optional ones and the src attribute )
-					class=["\'](?P<class1>.*?(?:wp-image-|wp-post-image).+?)["\']
+					class=["\'](?P<class1>.*?(?:wp-image-|wp-post-image)[^"\']*)["\']
 					(?P<between1>[^>]*)
 					src=["\'](?P<src1>[^>"\']*)["\']
 					|                                                               (?# match same as before, but with the src attribute before the class attribute )
 					src=["\'](?P<src2>[^>"\']*)["\']
 					(?P<between2>[^>]*)
-					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image).+?)["\']
+					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image)[^"\']*)["\']
 				)
 				(?P<after>[^>\/]*)                                                  (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
