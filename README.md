@@ -85,20 +85,21 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 * Removed support for WordPress’ native galleries after some users had reported issues
 
 ### 0.0.9 ###
-* Support zu WordPress 4.0
-* Lazy Loading für WordPress-Bildergalerien
+* WordPress 4.0 Support
+* Lazy Loading for WordPress-image-gallery
 
 ### 0.0.8 ###
-* Weiches Einblenden der Bilder (FadeIn)
-* Modifizierung der Unveil.js-Bibliothek
+* Smooth fadein of images
+* Unveil.js-library modifications
 
 ### 0.0.7 ###
-* Unterstützung weiterer Formate des img-Tags
+* Support of more formats for the img-tags
 
 ### 0.0.6 ###
-* Hot Fix für fehlerhafte WordPress-Funktion `wp_script_is`
+* Hot Fix for faulty WordPress-function `wp_script_is`
 
 ### 0.0.5 ###
-* Fallback aus purem JavaScript
-* Umzug to WordPress.org
-* [Mehr auf Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
+* Fallback on pure JavaScript
+* Move to WordPress.org
+* [More on Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
+* 
