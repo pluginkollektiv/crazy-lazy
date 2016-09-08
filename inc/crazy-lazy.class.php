@@ -93,7 +93,7 @@ final class CrazyLazy {
 					(?P<between2>[^>]*)
 					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image)[^>"\']*)["\']
 				)
-				(?P<after>[^>\/]*)                                                  (?# match any additional optional attributes )
+				(?P<after>[^>]*)                                                    (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
 			)/x',
 			array( 'CrazyLazy', 'replace_images' ),
