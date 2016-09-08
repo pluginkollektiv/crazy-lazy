@@ -38,6 +38,15 @@ It's possible to exclude some images from the lazy loading. This can be achieved
 * Back-end: ~ 0,01 MB
 * Front-end: ~ 0,04 MB
 
+### Support ###
+* Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/crazy-lazy)
+* We don’t handle support via e-mail, Twitter, GitHub issues etc.
+
+### Contribute ###
+* Active development of this plugin is handled [on GitHub](https://github.com/pluginkollektiv/crazy-lazy).
+* Pull requests for documented bugs are highly appreciated.
+* If you think you’ve found a bug (e.g. you’re experiencing unexpected behavior), please post at the [support forums](https://wordpress.org/support/plugin/crazy-lazy) first.
+* If you want to help us translate this plugin you can do so [on WordPress Translate](https://translate.wordpress.org/projects/wp-plugins/crazy-lazy).
 
 ### Credits ###
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
