@@ -111,4 +111,3 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 * Fallback on pure JavaScript
 * Move to WordPress.org
 * [More on Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
-* 
