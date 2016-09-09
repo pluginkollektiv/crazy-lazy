@@ -117,13 +117,13 @@ final class CrazyLazy {
 		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) || false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' ) ) {
 			return $matches['all'];
 		} else {
-			return '<img ' . $matches['before']
-			       . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
-			       . $matches['between1'] . $matches['between2']
-			       . ' data-src="' . $matches['src1'] . $matches['src2'] . '" '
-			       . $matches['after']
-			       . ' style="display:none" '
-			       . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
+            return '<img ' . $matches['before']
+                   . ' style="display:none" '
+                   . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
+                   . $matches['between1'] . $matches['between2']
+                   . ' data-src="' . $matches['src1'] . $matches['src2'] . '" '
+                   . $matches['after']
+                   . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
 		}
 	}
 
