@@ -64,6 +64,9 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 1.0.4 ###
+* fixed duplicate replacements of a single image
+
 ### 1.0.3 ###
 * fixed some cases with HTML attributes not being closed correctly
 
