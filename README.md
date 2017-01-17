@@ -3,14 +3,12 @@
 * Tags:              lazy, load, loading, performance, images
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.6
-* Tested up to:      4.6
+* Tested up to:      4.7
 * Stable tag:        1.0.4
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-
 Lazy load images. Simple to use: activate, done. Search engine and noscript user friendly.
-
 
 ## Description ##
 *Crazy Lazy* helps increasing the performance of your blog or website by displaying images efficiently. When a page would usually display some images, *Crazy Lazy* will prevent those images to load. Only when a user scrolls down the page and reaches the position where an image actually should be displayed, that particular image will be loaded from the server.
@@ -34,10 +32,15 @@ Placeholders for images can be styled, i.e. like this:
 ### Excluding images ###
 It's possible to exclude some images from the lazy loading. This can be achieved by adding an attribute `data-crazy-lazy="exclude"` to the images that should not lazy loaded by the plugin. 
 
-### Memory Usage ###
-* Back-end: ~ 0,01 MB
-* Front-end: ~ 0,04 MB
+### Support ###
+* Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/crazy-lazy)
+* We don’t handle support via e-mail, Twitter, GitHub issues etc.
 
+### Contribute ###
+* Active development of this plugin is handled [on GitHub](https://github.com/pluginkollektiv/crazy-lazy).
+* Pull requests for documented bugs are highly appreciated.
+* If you think you’ve found a bug (e.g. you’re experiencing unexpected behavior), please post at the [support forums](https://wordpress.org/support/plugin/crazy-lazy) first.
+* If you want to help us translate this plugin you can do so [on WordPress Translate](https://translate.wordpress.org/projects/wp-plugins/crazy-lazy).
 
 ### Credits ###
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
@@ -88,20 +91,20 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 * Removed support for WordPress’ native galleries after some users had reported issues
 
 ### 0.0.9 ###
-* Support zu WordPress 4.0
-* Lazy Loading für WordPress-Bildergalerien
+* WordPress 4.0 Support
+* Lazy Loading for WordPress-image-gallery
 
 ### 0.0.8 ###
-* Weiches Einblenden der Bilder (FadeIn)
-* Modifizierung der Unveil.js-Bibliothek
+* Smooth fadein of images
+* Unveil.js-library modifications
 
 ### 0.0.7 ###
-* Unterstützung weiterer Formate des img-Tags
+* Support of more formats for the img-tags
 
 ### 0.0.6 ###
-* Hot Fix für fehlerhafte WordPress-Funktion `wp_script_is`
+* Hot Fix for faulty WordPress-function `wp_script_is`
 
 ### 0.0.5 ###
-* Fallback aus purem JavaScript
-* Umzug to WordPress.org
-* [Mehr auf Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
+* Fallback on pure JavaScript
+* Move to WordPress.org
+* [More on Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
