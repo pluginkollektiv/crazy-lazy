@@ -3,14 +3,12 @@
 * Tags:              lazy, load, loading, performance, images
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.6
-* Tested up to:      4.6
+* Tested up to:      4.7
 * Stable tag:        1.0.3
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-
 Lazy load images. Simple to use: activate, done. Search engine and noscript user friendly.
-
 
 ## Description ##
 *Crazy Lazy* helps increasing the performance of your blog or website by displaying images efficiently. When a page would usually display some images, *Crazy Lazy* will prevent those images to load. Only when a user scrolls down the page and reaches the position where an image actually should be displayed, that particular image will be loaded from the server.
@@ -33,10 +31,6 @@ Placeholders for images can be styled, i.e. like this:
 
 ### Excluding images ###
 It's possible to exclude some images from the lazy loading. This can be achieved by adding an attribute `data-crazy-lazy="exclude"` to the images that should not lazy loaded by the plugin. 
-
-### Memory Usage ###
-* Back-end: ~ 0,01 MB
-* Front-end: ~ 0,04 MB
 
 ### Support ###
 * Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/crazy-lazy)
