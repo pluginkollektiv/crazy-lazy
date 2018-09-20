@@ -1,0 +1,30 @@
+language: php
+
+sudo: required
+addons:
+  chrome: stable
+
+stages:
+  - quality
+
+jobs:
+  include:
+    - stage: quality
+      php: '7.0'
+      script: ./vendor/bin/phpcs ./ --standard=./phpcs.config.xml -s
+
+cache:
+  directories:
+  - vendor
+  - $HOME/.composer/cache
+
+before_install:
+  - phpenv config-rm xdebug.ini || true
+  - composer self-update
+
+install:
+  - composer install
+
+# We should also add codecov.
+#after_success:
+#- bash <(curl -s https://codecov.io/bash)

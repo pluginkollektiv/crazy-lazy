@@ -1,0 +1,27 @@
+{
+	"name": "pluginkollektiv/crazy-lazy",
+	"description": "Lazy load images. Simple to use: Activate, done. Search engine and noscript user friendly.",
+	"keywords": [
+		"WordPress",
+		"lazy loading"
+	],
+	"homepage": "https://pluginkollektiv.github.io/crazy-lazy/",
+	"authors": [
+		{
+			"name": "pluginkollektiv",
+			"homepage": "https://github.com/pluginkollektiv",
+			"role": "Maintainer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/pluginkollektiv/crazy-lazy/issues",
+		"source": "https://github.com/pluginkollektiv/crazy-lazy",
+		"docs": "https://github.com/pluginkollektiv/crazy-lazy/blob/master/README.md"
+	},
+	"type": "wordpress-plugin",
+	"license": "GPL-v2",
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^0.14.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+	}
+}
