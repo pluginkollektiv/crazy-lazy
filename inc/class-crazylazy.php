@@ -6,7 +6,7 @@
  */
 
 /* Quit */
-defined( 'ABSPATH' ) or exit;
+defined( 'ABSPATH' ) || exit;
 
 
 /**
@@ -117,13 +117,13 @@ final class CrazyLazy {
 		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) || false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' ) ) {
 			return $matches['all'];
 		} else {
-            return '<img ' . $matches['before']
-                   . ' style="display:none" '
-                   . ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
-                   . $matches['between1'] . $matches['between2']
-                   . ' data-src="' . $matches['src1'] . $matches['src2'] . '" '
-                   . $matches['after']
-                   . $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
+			return '<img ' . $matches['before']
+				. ' style="display:none" '
+				. ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
+				. $matches['between1'] . $matches['between2']
+				. ' data-src="' . $matches['src1'] . $matches['src2'] . '" '
+				. $matches['after']
+				. $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
 		}
 	}
 
@@ -140,9 +140,9 @@ final class CrazyLazy {
 
 		/* Check for jQuery */
 		if ( ! empty( $wp_scripts ) && (bool) $wp_scripts->query( 'jquery' ) ) { /* hot fix for buggy wp_script_is() */
-			self::_print_jquery_lazyload();
+			self::print_jquery_lazyload();
 		} else {
-			self::_print_javascript_lazyload();
+			self::print_javascript_lazyload();
 		}
 	}
 
@@ -153,7 +153,7 @@ final class CrazyLazy {
 	 * @since   0.0.5
 	 * @change  0.0.9
 	 */
-	private static function _print_jquery_lazyload() {
+	private static function print_jquery_lazyload() {
 		wp_enqueue_script(
 			'unveil.js',
 			plugins_url(
@@ -161,7 +161,7 @@ final class CrazyLazy {
 				CRAZY_LAZY_BASE
 			),
 			array( 'jquery' ),
-			'',
+			'1.0.4',
 			true
 		);
 	}
@@ -172,7 +172,7 @@ final class CrazyLazy {
 	 * @since   0.0.5
 	 * @change  0.0.9
 	 */
-	private static function _print_javascript_lazyload() {
+	private static function print_javascript_lazyload() {
 		wp_enqueue_script(
 			'lazyload.js',
 			plugins_url(
@@ -180,7 +180,7 @@ final class CrazyLazy {
 				CRAZY_LAZY_BASE
 			),
 			array(),
-			'',
+			'1.0.4',
 			true
 		);
 	}

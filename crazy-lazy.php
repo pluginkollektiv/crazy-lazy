@@ -41,7 +41,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 defined( 'ABSPATH' ) || exit;
 
 
-/* FE only */
+/* Frontend only */
 if ( is_admin() ) {
 	return;
 }
@@ -50,6 +50,6 @@ if ( is_admin() ) {
 /* Fire! */
 define( 'CRAZY_LAZY_BASE', plugin_basename( __FILE__ ) );
 
-require_once( dirname( __FILE__ ) . '/inc/crazy-lazy.class.php' );
+require_once dirname( __FILE__ ) . '/inc/class-crazylazy.php';
 
 add_action( 'wp', array( 'CrazyLazy', 'instance' ) );
