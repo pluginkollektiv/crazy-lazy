@@ -39,6 +39,13 @@ final class CrazyLazy {
 		}
 
 		/* Hooks */
+		add_action(
+			'init',
+			array(
+				__CLASS__,
+				'load_plugin_textdomain'
+			)
+		);
 		add_filter(
 			'the_content',
 			array(
@@ -63,6 +70,12 @@ final class CrazyLazy {
 		);
 	}
 
+	/**
+	 * Load the textdomain for backward compatibility of older WordPress versions and to prevent a warning in GlotPress.
+	 */
+	public function load_plugin_textdomain() {
+		load_plugin_textdomain( 'crazy-lazy' );
+	}
 
 	/**
 	 * Prepare content images for Crazy Lazy usage
