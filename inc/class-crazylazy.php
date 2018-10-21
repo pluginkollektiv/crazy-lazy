@@ -61,6 +61,13 @@ final class CrazyLazy {
 				'prepare_images',
 			)
 		);
+		add_filter(
+			'widget_text',
+			array(
+				__CLASS__,
+				'prepare_images',
+			)
+		);
 		add_action(
 			'wp_enqueue_scripts',
 			array(
