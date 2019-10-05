@@ -1,8 +1,6 @@
 <?php
 /**
- * CrazyLazy plugin class>>>>>>> master
-125
-
+ * CrazyLazy plugin class
  *
  * @package CrazyLazy
  */
