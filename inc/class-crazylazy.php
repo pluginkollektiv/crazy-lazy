@@ -1,6 +1,8 @@
 <?php
 /**
- * CrazyLazy plugin class
+ * CrazyLazy plugin class>>>>>>> master
+125
+
  *
  * @package CrazyLazy
  */
@@ -110,17 +112,19 @@ final class CrazyLazy {
 		/* Replace images */
 		return preg_replace_callback(
 			'/(?P<all>                                                              (?# match the whole img tag )
-				<img(?P<before>[^>]*)                                               (?# the opening of the img and some optional attributes )
+				<img(?P<before>[^>]*?)                                              (?# the opening of the img and some optional attributes )
 				(                                                                   (?# match a class attribute followed by some optional ones and the src attribute )
-					class=["\'](?P<class1>.*?(?:wp-image-|wp-post-image|avatar-)[^>"\']*)["\']
-					(?P<between1>[^>]*)
+					class=["\'](?P<class1>[^>"\']*)["\']
+					(?P<between1>[^>]*?)
 					src=["\'](?P<src1>[^>"\']*)["\']
 					|                                                               (?# match same as before, but with the src attribute before the class attribute )
 					src=["\'](?P<src2>[^>"\']*)["\']
-					(?P<between2>[^>]*)
-					class=["\'](?P<class2>.*?(?:wp-image-|wp-post-image|avatar-)[^>"\']*)["\']
+					(?P<between2>[^>]*?)
+					class=["\'](?P<class2>[^>"\']*)["\']
+					|                                                               (?# match images with a src attribute nut without a class attribute )
+					src=["\'](?P<src3>[^>"\']*)["\']
 				)
-				(?P<after>[^>]*)                                                    (?# match any additional optional attributes )
+				(?P<after>[^>]*?)                                                   (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
 			)/x',
 			array( 'CrazyLazy', 'replace_images' ),
@@ -148,7 +152,7 @@ final class CrazyLazy {
 				. ' style="display:none" '
 				. ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
 				. $matches['between1'] . $matches['between2']
-				. ' data-src="' . $matches['src1'] . $matches['src2'] . '" '
+				. ' data-src="' . $matches['src1'] . $matches['src2'] . $matches['src3'] . '" '
 				. $matches['after']
 				. $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
 		}

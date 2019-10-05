@@ -1,9 +1,9 @@
 # Crazy Lazy #
 * Contributors:      pluginkollektiv
 * Tags:              lazy, load, loading, performance, images
-* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
+* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 3.6
-* Tested up to:      4.7
+* Tested up to:      5.2
 * Stable tag:        1.0.4
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,7 +44,7 @@ It's possible to exclude some images from the lazy loading. This can be achieved
 
 ### Credits ###
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
-* Maintainers: [pluginkollektiv](http://pluginkollektiv.org/)
+* Maintainers: [pluginkollektiv](https://pluginkollektiv.org/)
 
 
 ## Installation ##
@@ -85,7 +85,7 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 ### 0.0.9.2 ###
 * translated README
-* updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
+* updated [plugin authors](https://pluginkollektiv.org/hello-world/)
 
 ### 0.0.9.1 ###
 * Removed support for WordPress’ native galleries after some users had reported issues
@@ -107,4 +107,4 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 ### 0.0.5 ###
 * Fallback on pure JavaScript
 * Move to WordPress.org
-* [More on Google+](https://plus.google.com/110569673423509816572/posts/SnhULufzrMF)
+* [Read the realease post](https://crazylazy.pluginkollektiv.org/news/2013/wordpress-plugin-crazy-lazy-load/)

@@ -10,8 +10,8 @@
  * Plugin Name: Crazy Lazy
  * Description: Lazy load images. Simple to use: Activate, done. Search engine and noscript user friendly.
  * Author:      pluginkollektiv
- * Author URI:  http://pluginkollektiv.org
- * Plugin URI:  https://wordpress.org/plugins/crazy-lazy/
+ * Author URI:  https://pluginkollektiv.org/
+ * Plugin URI:  https://crazylazy.pluginkollektiv.org/
  * Text Domain: crazy-lazy
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
