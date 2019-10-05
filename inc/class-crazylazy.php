@@ -61,6 +61,20 @@ final class CrazyLazy {
 				'prepare_images',
 			)
 		);
+		add_filter(
+			'widget_text',
+			array(
+				__CLASS__,
+				'prepare_images',
+			)
+		);
+		add_filter(
+			'get_avatar',
+			array(
+				__CLASS__,
+				'prepare_images',
+			)
+		);
 		add_action(
 			'wp_enqueue_scripts',
 			array(
@@ -89,7 +103,7 @@ final class CrazyLazy {
 	 */
 	public static function prepare_images( $content ) {
 		/* No lazy images? */
-		if ( strpos( $content, '-image' ) === false ) {
+		if ( strpos( $content, '-image' ) === false && strpos( $content, 'avatar-' ) === false  ) {
 			return $content;
 		}
 
