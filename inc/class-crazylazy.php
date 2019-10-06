@@ -43,7 +43,7 @@ final class CrazyLazy {
 			'init',
 			array(
 				__CLASS__,
-				'load_plugin_textdomain'
+				'load_plugin_textdomain',
 			)
 		);
 		add_filter(
@@ -103,7 +103,7 @@ final class CrazyLazy {
 	 */
 	public static function prepare_images( $content ) {
 		/* No lazy images? */
-		if ( strpos( $content, '-image' ) === false && strpos( $content, 'avatar-' ) === false  ) {
+		if ( strpos( $content, '-image' ) === false && strpos( $content, 'avatar-' ) === false && strpos( $content, 'attachment-' ) === false ) {
 			return $content;
 		}
 
