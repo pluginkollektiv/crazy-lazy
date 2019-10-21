@@ -14,7 +14,7 @@ window.onload = function() {
 				a=d.styleSheets[0] || d.createStyleSheet();
 
 			a.addRule(q,'f:b');
-		  	for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
+			for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
 				l[b].currentStyle.f && c.push(l[b]);
 
 			a.removeRule(0);
@@ -32,6 +32,19 @@ window.onload = function() {
 			: this['on' + evt] = fn;
 	},
 
+	triggerEvent = function(el, type, initParams){
+		if (typeof window.CustomEvent !== "function") { // IE
+			window.CustomEvent = function(event, params) {
+				params = params || { bubbles: false, cancelable: false, detail: null };
+				var evt = document.createEvent( 'CustomEvent' );
+				evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+				return evt;
+			}
+		}
+		var evt = new CustomEvent(type, initParams);
+		el.dispatchEvent(evt);
+ },
+
 	_has = function(obj, key) {
 		return Object.prototype.hasOwnProperty.call(obj, key);
 	};
@@ -43,10 +56,17 @@ window.onload = function() {
 		img.onload = function() {
 			if ( !! el.parent )
 				el.parent.replaceChild(img, el)
-	  		else
+			else
 				el.src = src;
 
 			if ( fn ) fn();
+
+			triggerEvent(document.body, 'unveiled', {
+				bubbles: true, 
+				detail: {
+					img: !!el.parent ? img : el
+				}
+			});
 		}
 
 		img.src = src;
@@ -70,7 +90,7 @@ window.onload = function() {
 					loadImage(
 						images[i],
 						function () {
-							images.splice(i, i);
+							images.splice(i, 1);
 						}
 					);
 				}

@@ -32,7 +32,10 @@
                         {
                             'opacity': 1
                         },
-                        200
+                        200,
+                        function() {
+                            $('body').trigger('unveiled', {img: $$});
+                        }
                     );
                 }
             }
