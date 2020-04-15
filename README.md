@@ -3,7 +3,7 @@
 * Tags:              lazy, load, loading, performance, images
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 3.6
-* Tested up to:      5.2
+* Tested up to:      5.4
 * Stable tag:        1.0.4
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
