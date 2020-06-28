@@ -4,7 +4,7 @@
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 3.6
 * Tested up to:      5.4
-* Stable tag:        1.0.4
+* Stable tag:        1.0.5
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+### 1.0.5 ###
+* add support for new skip data attribute "data-skip-lazy" and CSS class "skip-lazy"
+
 ### 1.0.4 ###
 * fixed duplicate replacements of a single image
 
