@@ -1,14 +1,14 @@
 # Crazy Lazy #
-* Contributors:      pluginkollektiv
-* Tags:              lazy, load, loading, performance, images
-* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
-* Requires at least: 3.6
-* Tested up to:      5.4
-* Stable tag:        1.1.0
-* License:           GPLv2 or later
-* License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
-Lazy load images. Simple to use: activate, done. Search engine and noscript user friendly.
+Contributors:      pluginkollektiv  
+Tags:              lazy, load, loading, performance, images  
+Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW  
+Requires at least: 3.6  
+Tested up to:      5.4  
+Stable tag:        1.1.0  
+License:           GPLv2 or later  
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
+Lazy load images. Simple to use: activate, done. Search engine and noscript user friendly.  
 
 ## Description ##
 *Crazy Lazy* helps increasing the performance of your blog or website by displaying images efficiently. When a page would usually display some images, *Crazy Lazy* will prevent those images to load. Only when a user scrolls down the page and reaches the position where an image actually should be displayed, that particular image will be loaded from the server.
