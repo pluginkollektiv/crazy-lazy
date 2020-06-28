@@ -32,7 +32,8 @@ Placeholders for images can be styled, i.e. like this:
 }`
 
 ### Excluding images ###
-It's possible to exclude some images from the lazy loading. This can be achieved by adding an attribute `data-crazy-lazy="exclude"` to the images that should not lazy loaded by the plugin. 
+It's possible to exclude some images from the lazy loading. This can be achieved by adding a data attribute `data-crazy-lazy="exclude"` or `data-skip-lazy` to the images that should not lazy loaded by the plugin.
+Alternatively you can add a CSS class `crazy_lazy` or `skip-lazy`. These CSS classes can also be added to the image block.
 
 ### Support ###
 * Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/crazy-lazy)
