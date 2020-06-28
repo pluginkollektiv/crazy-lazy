@@ -110,6 +110,7 @@ final class CrazyLazy {
 		/* Replace images */
 		return preg_replace_callback(
 			'/(?P<all>                                                              (?# match the whole img tag )
+				(?P<figure_opening><figure[^>]*?>)?                                 (?# the optional opening figure tag, if an image block is used )
 				<img(?P<before>[^>]*?)                                              (?# the opening of the img and some optional attributes )
 				(                                                                   (?# match a class attribute followed by some optional ones and the src attribute )
 					class=["\'](?P<class1>[^>"\']*)["\']
@@ -124,6 +125,7 @@ final class CrazyLazy {
 				)
 				(?P<after>[^>]*?)                                                   (?# match any additional optional attributes )
 				(?P<closing>\/?)>                                                   (?# match the closing of the img tag with or without a self closing slash )
+				(?P<figure_closing><\/figure>)?                                     (?# the optional closing figure tag, if an image block is used )
 			)/x',
 			array( 'CrazyLazy', 'replace_images' ),
 			$content
@@ -148,16 +150,18 @@ final class CrazyLazy {
 			|| false !== strpos( $matches['all'], 'data-skip-lazy' )
 			|| false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' )
 			|| false !== strpos( $matches['class1'] . $matches['class2'], 'skip-lazy' )
+			|| false !== strpos( $matches['figure_opening'], 'crazy_lazy' )
+			|| false !== strpos( $matches['figure_opening'], 'skip-lazy' )
 		) {
 			return $matches['all'];
 		} else {
-			return '<img ' . $matches['before']
+			return $matches['figure_opening'] . '<img ' . $matches['before']
 				. ' style="display:none" '
 				. ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
 				. $matches['between1'] . $matches['between2']
 				. ' data-src="' . $matches['src1'] . $matches['src2'] . $matches['src3'] . '" '
 				. $matches['after']
-				. $matches['closing'] . '><noscript>' . $matches['all'] . '</noscript>';
+				. $matches['closing'] . '>' . $matches['figure_closing'] . '<noscript>' . $matches['all'] . '</noscript>';
 		}
 	}
 
