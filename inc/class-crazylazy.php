@@ -143,7 +143,12 @@ final class CrazyLazy {
 		/* Empty gif */
 		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 		// Return unmodified image if the "data skip" attribute was found or the image has already been processed.
-		if ( false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' ) || false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' ) ) {
+		if (
+			false !== strpos( $matches['all'], 'data-crazy-lazy="exclude"' )
+			|| false !== strpos( $matches['all'], 'data-skip-lazy' )
+			|| false !== strpos( $matches['class1'] . $matches['class2'], 'crazy_lazy' )
+			|| false !== strpos( $matches['class1'] . $matches['class2'], 'skip-lazy' )
+		) {
 			return $matches['all'];
 		} else {
 			return '<img ' . $matches['before']

@@ -17,6 +17,8 @@ By loading images only when needed, *Crazy Lazy* will reducing page loading time
 
 This Lazy Load plugin is structured very lean and does not require any settings: activate, done. Depending on the theme or the usage of jQuery *Crazy Lazy* optionally will utilze a modified version of the jQuery plugin [Unveil.js](https://github.com/luis-almeida/unveil), or the native JavaScript library [lazyload.js](https://gist.github.com/miloplacencia/3931803).
 
+[](http://coderisk.com/wp/plugin/crazy-lazy/RIPS-pR7PC89HbM)
+
 ### Styling ###
 Placeholders for images can be styled, i.e. like this:
 
