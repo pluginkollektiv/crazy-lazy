@@ -155,6 +155,10 @@ final class CrazyLazy {
 		) {
 			return $matches['all'];
 		} else {
+			if ( ! isset( $matches['figure_closing'] ) ) {
+				$matches['figure_closing'] = '';
+			}
+			
 			return $matches['figure_opening'] . '<img ' . $matches['before']
 				. ' style="display:none" '
 				. ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '
