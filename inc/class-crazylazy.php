@@ -111,6 +111,7 @@ final class CrazyLazy {
 					if ( version_compare( $wp_version, '5.5', '>=' ) ) {
 						echo esc_html(
 							sprintf(
+								/* translators: WordPress version */
 								__( 'As you are running WordPress %s, images are lazy loaded by default.', 'crazy-lazy' ),
 								$wp_version
 							)
@@ -118,6 +119,7 @@ final class CrazyLazy {
 					} else {
 						echo esc_html(
 							sprintf(
+								/* translators: WordPress version */
 								__( 'You are running WordPress %s, the feature is not available.', 'crazy-lazy' ),
 								$wp_version
 							)
