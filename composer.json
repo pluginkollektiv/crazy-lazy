@@ -22,6 +22,6 @@
 	"license": "GPL-v2",
 	"require-dev": {
 		"wp-coding-standards/wpcs": "^0.14.1",
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.4"
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
 	}
 }
