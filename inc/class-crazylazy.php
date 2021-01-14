@@ -85,6 +85,71 @@ final class CrazyLazy {
 	}
 
 	/**
+	 * Add deprecation notice in WP Admin.
+	 */
+	public static function add_deprecation_notice() {
+		// Only show notice for users who can actually uninstall or update plugins.
+		if ( ! current_user_can( 'delete_plugins' ) && ! current_user_can( 'update_plugins' ) ) {
+			return;
+		}
+
+		global $wp_version;
+		?>
+<div class="notice notice-warning">
+			<p>
+				<?php
+				echo wp_kses(
+					__( 'Crazy Lazy is deprecated in favor of <a href="https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/">lazy loading in Core</a> and the <a href="https://wordpress.org/plugins/lazy-loading-responsive-images/">Lazy Loader</a> plugin.', 'crazy-lazy' ),
+					array( 'a' => array( 'href' => array() ) )
+				);
+				?>
+			</p>
+			<ol>
+				<li>
+					<?php esc_html_e( 'Lazy loading in Core (available in WordPress 5.5+) is based on the native HTML loading attribute.', 'crazy-lazy' ); ?>
+					<?php
+					if ( version_compare( $wp_version, '5.5', '>=' ) ) {
+						echo esc_html(
+							sprintf(
+								__( 'As you are running WordPress %s, images are lazy loaded by default.', 'crazy-lazy' ),
+								$wp_version
+							)
+						);
+					} else {
+						echo esc_html(
+							sprintf(
+								__( 'You are running WordPress %s, the feature is not available.', 'crazy-lazy' ),
+								$wp_version
+							)
+						);
+					}
+					?>
+				</li>
+				<?php if ( is_plugin_active( 'lazy-loading-responsive-images/lazy-load-responsive-images.php' ) ) { ?>
+					<li><?php esc_html_e( 'As Lazy Loader is active, you can deactivate and uninstall Crazy Lazy.', 'crazy-lazy' ); ?></li>
+					<?php
+				} else {
+					$install_url = add_query_arg(
+						array(
+							's'    => 'florianbrinkmann',
+							'tab'  => 'search',
+							'type' => 'author',
+						),
+						admin_url( '/plugin-install.php' )
+					);
+					?>
+					<li><?php esc_html_e( 'In case you still need a lazy loading plugin, we recommend to switch to Lazy Loader:', 'crazy-lazy' ); ?>
+						<a href="<?php echo esc_attr( $install_url ); ?>">
+							<?php esc_html_e( 'Install now.', 'crazy-lazy' ); ?>
+						</a>
+					</li>
+				<?php } ?>
+			</ol>
+		</div>
+		<?php
+	}
+
+	/**
 	 * Load the textdomain for backward compatibility of older WordPress versions and to prevent a warning in GlotPress.
 	 */
 	public function load_plugin_textdomain() {
@@ -158,7 +223,7 @@ final class CrazyLazy {
 			if ( ! isset( $matches['figure_closing'] ) ) {
 				$matches['figure_closing'] = '';
 			}
-			
+
 			return $matches['figure_opening'] . '<img ' . $matches['before']
 				. ' style="display:none" '
 				. ' class="crazy_lazy ' . $matches['class1'] . $matches['class2'] . '" src="' . $null . '" '

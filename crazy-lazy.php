@@ -40,16 +40,22 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 /* Quit */
 defined( 'ABSPATH' ) || exit;
 
-
-/* Frontend only */
-if ( is_admin() ) {
-	return;
-}
-
-
 /* Fire! */
 define( 'CRAZY_LAZY_BASE', plugin_basename( __FILE__ ) );
 
 require_once dirname( __FILE__ ) . '/inc/class-crazylazy.php';
+
+if ( is_admin() ) {
+	add_action(
+		is_network_admin() ? 'network_admin_notices' : 'admin_notices',
+		array(
+			'CrazyLazy',
+			'add_deprecation_notice',
+		)
+	);
+
+	/* Frontend only */
+	return;
+}
 
 add_action( 'wp', array( 'CrazyLazy', 'instance' ) );
