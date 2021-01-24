@@ -106,14 +106,23 @@ final class CrazyLazy {
 			</p>
 			<ol>
 				<li>
-					<?php esc_html_e( 'Lazy loading in Core (available in WordPress 5.5+) is based on the native HTML loading attribute.', 'crazy-lazy' ); ?>
+					<?php
+					echo wp_kses(
+						__( 'Lazy loading in Core (available in WordPress 5.5+) is based on the HTML <code>loading</code> attribute.', 'crazy-lazy' ),
+						array( 'code' => array() )
+					);
+					?>
 					<?php
 					if ( version_compare( $wp_version, '5.5', '>=' ) ) {
-						echo esc_html(
+						echo wp_kses(
 							sprintf(
 								/* translators: WordPress version */
-								__( 'As you are running WordPress %s, images are lazy loaded by default.', 'crazy-lazy' ),
+								__( 'As you are running WordPress %s, images are lazy loaded by default in <a href="https://caniuse.com/loading-lazy-attr">browsers supporting native lazy loading</a>.', 'crazy-lazy' ),
 								$wp_version
+							),
+							array(
+								'a'    => array( 'href' => array() ),
+								'code' => array(),
 							)
 						);
 					} else {
