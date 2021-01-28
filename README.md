@@ -4,20 +4,20 @@ Contributors:      pluginkollektiv
 Tags:              lazy, load, loading, performance, images  
 Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW  
 Requires at least: 3.6  
-Tested up to:      5.4  
-Stable tag:        1.1.0  
+Tested up to:      5.6  
+Stable tag:        1.2.0  
 License:           GPLv2 or later  
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html  
 Lazy load images. Simple to use: activate, done. Search engine and noscript user friendly.  
 
 ## Description ##
+**Warning: *Crazy Lazy* has reached end of life. WordPress 5.5+ supports [lazy-loading of images in Core](https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/) based on the native HTML `loading` attribute. If you look for an alternative plugin, we recommend to use [Lazy Loader](https://wordpress.org/plugins/lazy-loading-responsive-images/) instead.**
+
 *Crazy Lazy* helps increasing the performance of your blog or website by displaying images efficiently. When a page would usually display some images, *Crazy Lazy* will prevent those images to load. Only when a user scrolls down the page and reaches the position where an image actually should be displayed, that particular image will be loaded from the server.
 
 By loading images only when needed, *Crazy Lazy* will reducing page loading times and (potentially costly) traffic.
 
 This Lazy Load plugin is structured very lean and does not require any settings: activate, done. Depending on the theme or the usage of jQuery *Crazy Lazy* optionally will utilze a modified version of the jQuery plugin [Unveil.js](https://github.com/luis-almeida/unveil), or the native JavaScript library [lazyload.js](https://gist.github.com/miloplacencia/3931803).
-
-[](http://coderisk.com/wp/plugin/crazy-lazy/RIPS-pR7PC89HbM)
 
 ### Styling ###
 Placeholders for images can be styled, i.e. like this:
@@ -67,8 +67,13 @@ Crazy Lazy will work with every caching plugin, including our own [Cachify](http
 
 
 ## Changelog ##
+
+### 1.2.0 ###
+* Fix PHP warning due to undefined index (#37, #38) - thanks to Rouven Hurling
+* Add EOL notice to the admin area recommending Lazy Loader as an alternative
+
 ### 1.1.0 ###
- *add support for image block using a skip-class
+* add support for image block using a skip-class
 
 ### 1.0.5 ###
 * add support for new skip data attribute "data-skip-lazy" and CSS class "skip-lazy"
